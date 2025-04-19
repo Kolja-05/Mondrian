@@ -12,15 +12,20 @@ This repository is a collection of code to generate images that follow Mondrian'
 
 ## How to Use
 
+
 1. Clone the repository or download the C script.
-2. Ensure you have a C compiler (e.g., `gcc`) and the necessary libraries installed (e.g., `libpng` for PNG generation).
-3. Compile the script:
+2. Either generate images using the provided  gui.py
+   ```bash
+   python3 gui.py
+4. Or directly generate images by compiling and executing the C-code
+5. Ensure you have a C compiler (e.g., `gcc`) and the necessary libraries installed (e.g., `libpng` for PNG generation).
+6. Compile the script:
    ```bash
    gcc  generator.c -o test -lpng
-4. Execute the compiled file
+7. Execute the compiled file
    ```bash
    ./test
-6. Open the output
+8. Open the output
    ```bash
    output.png
 
