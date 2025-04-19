@@ -6,7 +6,7 @@
 #include <time.h>
 
 Canvas* generate(int width, int height, int num_v_lines, int num_h_lines, int num_discontinued_v_lines, int num_discontinued_h_lines,
-                 int min_distance_between_lines, int num_red, int num_blue, int num_yellow, int num_black){
+                 int min_distance_between_lines, int num_sym_v_lines, int num_red, int num_blue, int num_yellow, int num_black){
     Canvas *c = create_canvas(width, height);
     // White canvas
     for(int i=0; i<width; i++){
@@ -64,6 +64,8 @@ Canvas* generate(int width, int height, int num_v_lines, int num_h_lines, int nu
         num_h_lines_drawn++;
         draw_horizontal_line(c, y, 10, BLACK);
     }
+    
+      
 
     //draw discontinued lines
     for(int i=0; i<num_discontinued_h_lines; i++){
@@ -110,6 +112,20 @@ Canvas* generate(int width, int height, int num_v_lines, int num_h_lines, int nu
         num_v_lines_drawn++;
         draw_vertical_line_from_kth_to_nth_intersection(c, k, n, x, 10, BLACK);
     }
+
+
+    //draw symmetric v lines
+    for(int i=0; i<num_sym_v_lines; i++){
+        int origin_x = rand() % width+1;
+        printf("x = %d", origin_x);
+        int y = rand() % height+1;
+        printf("y = %d", y);
+        printf("starting drawing sym line\n");
+        draw_symetric_vertical_line(c, origin_x, y, 10, min_distance_between_lines+5, BLACK);
+        
+    } 
+
+    
 
     //drawing coloured areas
     for(int i=0; i<num_black; i++){
@@ -163,29 +179,15 @@ Canvas* generate(int width, int height, int num_v_lines, int num_h_lines, int nu
             fill_rectangle_area_from_pixel(c, x, y, RED);
         }
     }
-        
-    
+     
+     
 
 
     return c;
 }
-Canvas* generate_symmetric(){
-    int width = 151;
-    int height = 100;
-    Canvas *c = create_canvas(width, height);
-    // White canvas
-    for(int i=0; i<width; i++){
-        for(int j=0; j<height; j++){
-            set_pixel(c, i, j, WHITE);
-        }
-    }
-    draw_symetric_vertical_line(c, 1, 1, 10, BLACK);
-    return c;
 
-}
 
 int main(){
-    
 
     srand(time(0)); //seed rng
                     
@@ -193,17 +195,17 @@ int main(){
     int height = 500;
     int strokesize = 10; // TODO implement in generate() function
     int num_v_lines = 3;
-    int num_h_lines = 3;
-    int num_discontinued_v_lines = 5;
-    int num_discontinued_h_lines = 5;
-    int num_red = 2;
-    int num_blue = 2;
-    int num_yellow = 2;
+    int num_h_lines = 2;
+    int num_discontinued_v_lines = 1;
+    int num_discontinued_h_lines = 1;
+    int num_red = 1;
+    int num_blue = 1;
+    int num_yellow = 1;
     int num_black = 1;
     int min_distance_between_lines = 3 * strokesize;
-    Canvas *c = generate(width, height, num_v_lines, num_h_lines, num_discontinued_v_lines, num_discontinued_h_lines, min_distance_between_lines, num_red, num_blue, 
-                         num_yellow, num_black);
-
+    int num_sym_v_lines = 2;
+    Canvas *c = generate(width, height, num_v_lines, num_h_lines, num_discontinued_v_lines, num_discontinued_h_lines, min_distance_between_lines, num_sym_v_lines, num_red,
+                        num_blue, num_yellow, num_black);
     save_canvas_as_png(c, "output.png");
     free_canvas(c);
 }
