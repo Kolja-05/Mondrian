@@ -17,5 +17,7 @@ This repository is a collection of code to generate images that follow Mondrians
 3. Compile the script:
    ```bash
    gcc  generator.c -o test -lpng
-4. Execute the compiled file ./test
-5. Open output.png 
+4. Execute the compiled file
+   ```bash
+   ./test
+6. Open ```bash output.png 
