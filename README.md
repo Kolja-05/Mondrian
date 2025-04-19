@@ -13,7 +13,7 @@ This repository is a collection of code to generate images that follow Mondrian'
 ## How to Use
 
 
-1. Clone the repository or download the C script.
+1. Clone the repository
    ```bash
    git clone https://github.com/Kolja-05/Mondrian.git
 
