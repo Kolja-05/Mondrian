@@ -182,24 +182,18 @@ void fill_rectangle_area_from_pixel(Canvas *c, int x, int y, Colour colour){
 void draw_symetric_vertical_line(Canvas *c, int origin_x, int y, int strokesize, Colour colour){
     int left = origin_x;
     int right = origin_x;
-    printf("pixel origin x y: %d, %d \n", origin_x, y);
-    printf("pixel on canvas: %d \n", pixel_on_canvas(c, origin_x, y));
     if(!pixel_on_canvas(c, origin_x, y)) return;
-    printf("reached 1 \n");
     //find left
     while(pixel_on_canvas(c, left-1, y)){
         left--;
     }
-    printf("reached 2\n");
     //find right
     while(pixel_on_canvas(c, right+1, y)){
         right++;
     }
 
-    printf("reached 3\n");
     //calculate middle while avoiding overflow
     int mid = left + (right - left) / 2;
-    printf("%d", mid);
 
     //paint upward from (mid, y)
     int step = 0;
@@ -223,7 +217,6 @@ void draw_symetric_vertical_line(Canvas *c, int origin_x, int y, int strokesize,
         step++;
     }
     
-    printf("step: %d \n", step);
 }
 
 

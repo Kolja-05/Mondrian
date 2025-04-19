@@ -185,13 +185,8 @@ Canvas* generate_symmetric(){
 }
 
 int main(){
-    Canvas *c = generate_symmetric();
-    save_canvas_as_png(c, "output.png");
-    free_canvas(c);
+    
 
-}
-
-void saver(){
     srand(time(0)); //seed rng
                     
     int width = 500;
@@ -209,6 +204,7 @@ void saver(){
     Canvas *c = generate(width, height, num_v_lines, num_h_lines, num_discontinued_v_lines, num_discontinued_h_lines, min_distance_between_lines, num_red, num_blue, 
                          num_yellow, num_black);
 
-   
+    save_canvas_as_png(c, "output.png");
+    free_canvas(c);
 }
 
