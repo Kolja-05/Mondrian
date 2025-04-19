@@ -14,7 +14,9 @@ This repository is a collection of code to generate images that follow Mondrian'
 
 
 1. Clone the repository or download the C script.
-2. Either generate images using the provided  gui.py
+   ```bash
+   git clone 
+3. Either generate images using the provided  gui.py
    ```bash
    python3 gui.py
 4. Or directly generate images by compiling and executing the C-code
