@@ -6,6 +6,6 @@ Piet Mondrian was a Dutch painter, art theoretician, and a pioneer of 20th-centu
 idea will ignore the particulars of appearance—that is to say, natural form and colour. On the contrary, it should find its expression in the abstraction of natural form and colour—that is to say, the straight line and the clearly defined
 primary colours".
 
-![Screenshot]([https://i.ytimg.com/vi/Z9XKtEa37mY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD4He36ngKJAupv39XaxFo-2c_jyA](https://galeriemontblanc.com/cdn/shop/products/main_05627633-66eb-468c-a0da-6ae47e7ec6f5.png?v=1664294626))
+![Screenshot](https://i.ytimg.com/vi/Z9XKtEa37mY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD4He36ngKJAupv39XaxFo-2c_jyA](https://galeriemontblanc.com/cdn/shop/products/main_05627633-66eb-468c-a0da-6ae47e7ec6f5.png?v=1664294626)
 
 This repository is a collection of files to generate images that follow Mondrians artistic Ideas. 
