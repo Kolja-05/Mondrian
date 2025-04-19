@@ -179,22 +179,30 @@ void fill_rectangle_area_from_pixel(Canvas *c, int x, int y, Colour colour){
 }
 
 //from origin finde next lines to the left and right (or canvas bound) and draw a line in the middle, so that it splits the area in two symmetric ones
-void draw_symetric_vertical_line(Canvas *c, int origin_x, int y, int strokesize, Colour colour){
+void draw_symetric_vertical_line(Canvas *c, int origin_x, int y, int strokesize, int min_distance_between_lines, Colour colour){
     int left = origin_x;
     int right = origin_x;
     if(!pixel_on_canvas(c, origin_x, y)) return;
     //find left
     while(pixel_on_canvas(c, left-1, y)){
+        if(equal_colours(get_pixel_colour(c, left-1, y), BLACK)) break;
         left--;
     }
     //find right
     while(pixel_on_canvas(c, right+1, y)){
+        if(equal_colours(get_pixel_colour(c, right+1, y), BLACK)) break;
         right++;
     }
 
     //calculate middle while avoiding overflow
     int mid = left + (right - left) / 2;
 
+    int distance = 0;
+    while(pixel_on_canvas(c, mid+distance, y)){
+        if(equal_colours(get_pixel_colour(c, mid+distance, y), BLACK)) break;
+        distance++;
+    }
+    if(distance<min_distance_between_lines) return;
     //paint upward from (mid, y)
     int step = 0;
     while (pixel_on_canvas(c, mid, y+step)){
@@ -209,7 +217,6 @@ void draw_symetric_vertical_line(Canvas *c, int origin_x, int y, int strokesize,
     step = 1;//0 has already been painted
     while (pixel_on_canvas(c, mid, y-step)){
         if(equal_colours(get_pixel_colour(c, mid, y-step), BLACK)) break;
-        
         for(int i=0; i<strokesize/2; i++){
             set_pixel(c, mid+i, y-step, colour);
             set_pixel(c, mid-i, y-step, colour);

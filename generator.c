@@ -117,10 +117,7 @@ Canvas* generate(int width, int height, int num_v_lines, int num_h_lines, int nu
     //draw symmetric v lines
     for(int i=0; i<num_sym_v_lines; i++){
         int origin_x = rand() % width+1;
-        printf("x = %d", origin_x);
         int y = rand() % height+1;
-        printf("y = %d", y);
-        printf("starting drawing sym line\n");
         draw_symetric_vertical_line(c, origin_x, y, 10, min_distance_between_lines+5, BLACK);
         
     } 
