@@ -20,4 +20,6 @@ This repository is a collection of code to generate images that follow Mondrians
 4. Execute the compiled file
    ```bash
    ./test
-6. Open ```bash output.png 
+6. Open
+   ```bash
+   output.png 
