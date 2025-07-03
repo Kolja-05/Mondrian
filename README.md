@@ -32,7 +32,3 @@ This repository is a collection of code to generate images that follow Mondrian'
    ```bash
    output.png
 
-## License, Feedback and Contributions
-
-Feel free to use, modify, and distribute! Ideas, improvements, or bugs? Open an issue or submit a pull request!
-
