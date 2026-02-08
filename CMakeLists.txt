@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 4.0)
+project(Mondrian)
+set(CMAKE_C_STANDARD 99)
+find_package(PNG REQUIRED)
+add_executable(mondrian ./src/generator.c ./src/draw_utils.c ./src/canvas.c)
+target_compile_options(mondrian PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(mondrian PRIVATE -lm)
+target_link_libraries(mondrian PRIVATE PNG::PNG)

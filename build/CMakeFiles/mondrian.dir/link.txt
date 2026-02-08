@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/mondrian.dir/link.d CMakeFiles/mondrian.dir/src/generator.c.o CMakeFiles/mondrian.dir/src/draw_utils.c.o CMakeFiles/mondrian.dir/src/canvas.c.o -o mondrian  -lm /usr/lib/x86_64-linux-gnu/libpng.so /usr/lib/x86_64-linux-gnu/libz.so

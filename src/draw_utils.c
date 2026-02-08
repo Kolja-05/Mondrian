@@ -1,7 +1,6 @@
-#include "canvas.c"
+#include "canvas.h"
 #include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
+
 
 
 void draw_horizontal_line(Canvas *c, size_t y, size_t strokesize, Colour colour){

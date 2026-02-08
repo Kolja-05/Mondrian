@@ -1,0 +1,3 @@
+/home/kolja/Documents/personal_projects/Mondrian/build/CMakeFiles/mondrian.dir
+/home/kolja/Documents/personal_projects/Mondrian/build/CMakeFiles/edit_cache.dir
+/home/kolja/Documents/personal_projects/Mondrian/build/CMakeFiles/rebuild_cache.dir

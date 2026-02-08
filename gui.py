@@ -3,17 +3,17 @@ import subprocess
 from PIL import Image, ImageTk
 
 def generate_image():
-    subprocess.run(["./generate"])  # This runs the C program to generate the image
+    subprocess.run(["./build/mondrian"]) 
     load_image()
 
 def load_image():
     try:
-        img = Image.open("output.png")  
+        img = Image.open("output.png")
         img = img.resize((300, 300))  
-        img_tk = ImageTk.PhotoImage(img)  # Convert the image to a format Tkinter can display
+        img_tk = ImageTk.PhotoImage(img)  
         
-        label.config(image=img_tk)  # Update the label with the new image
-        label.image = img_tk  # Keep a reference to the image so it doesn't get garbage-collected
+        label.config(image=img_tk)  
+        label.image = img_tk  
     except FileNotFoundError:
         print("Error: output.png not found.")
 

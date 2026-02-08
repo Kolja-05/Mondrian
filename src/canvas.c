@@ -1,40 +1,12 @@
-#include <complex.h>
+#include "canvas.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <png.h>
-#include <stdbool.h>
-
-typedef struct Colour_ {
-    uint8_t r, g, b;
-} Colour;
-
-Colour WHITE = {255, 255, 255};
-Colour BLACK = {0, 0, 0};
-Colour RED = {255, 0, 0};
-Colour GREEN = {0, 255, 0};
-Colour BLUE = {0, 0, 255};
-Colour YELLOW = {255, 255, 0};
-Colour PURPLE = {255, 0, 255};
-Colour CYAN = {0, 255, 255};
-Colour FAILED = {1,2,3};
 
 bool equal_colours(Colour c1, Colour c2){
     if(c1.r==c2.r && c1.g==c2.g && c1.b==c2.b) return true;
     return false;
 }
-
-
-typedef struct Pixel_ {
-    Colour colour;
-} Pixel;
-
-
-typedef struct Canvas_{
-    int width, height;
-    Pixel *pixels;
-} Canvas;
-
 
 Canvas *create_canvas(int width, int height){
     Canvas *c = malloc(sizeof(Canvas));

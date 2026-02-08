@@ -1,4 +1,5 @@
-#include "draw_utils.c"
+#include "draw_utils.h"
+#include "canvas.h"
 #include <asm-generic/errno.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -191,8 +192,8 @@ int main(){
     int width = 500;
     int height = 500;
     int strokesize = 10; // TODO implement in generate() function
-    int num_v_lines = 3;
-    int num_h_lines = 2;
+    int num_v_lines = 2;
+    int num_h_lines = 3;
     int num_discontinued_v_lines = 1;
     int num_discontinued_h_lines = 1;
     int num_red = 1;
