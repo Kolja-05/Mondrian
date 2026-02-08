@@ -22,7 +22,7 @@ This repository is a collection of code to generate images that follow Mondrian'
    python3 gui.py
    python3 slideshow
 4. Or directly generate images by compiling and executing the C-code
-5. Ensure you have a C compiler (e.g., `gcc`) and the necessary libraries installed (e.g., `libpng` for PNG generation).
+5. Ensure you have a CMake and the necesary libraries installed (e.g., `libpng` for PNG generation).
 6. Compile the script:
    ```bash
    cmake -B build -S .
